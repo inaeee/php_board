@@ -1,0 +1,10 @@
+<?php
+	include "./db.php";
+
+	$bno=$_POST['idx'];
+	$userpw=password_hash($_POST['pw'], PASSWORD_DEFAULT);
+	$sql=mq("update board set name='".$_POST['name']."', pw='".$_POST['pw']."', title='".$_POST['title']."', content='".$_POST['content']."' where idx='".$bno."'"); 
+?>
+
+<script type="text/javascript">alert("MODIFY COMPLETE");</script>
+<meta http-equiv="refresh" content="0; url=../board.php">
